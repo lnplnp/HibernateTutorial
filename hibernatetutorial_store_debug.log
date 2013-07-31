@@ -1,0 +1,536 @@
+> mvn -e -X exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="store"
+
+Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 14:51:28+0100)
+Maven home: %USERDIRECTORY%\java_tools\maven\apache-maven-3.0.5\bin\..
+Java version: 1.6.0_37, vendor: Sun Microsystems Inc.
+Java home: c:\Program Files\Java\jdk1.6.0_37\jre
+Default locale: fr_FR, platform encoding: Cp1252
+OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
+[INFO] Error stacktraces are turned on.
+[DEBUG] Reading global settings from %USERDIRECTORY%\java_tools\maven\apache-maven-3.0.5\bin\..\conf\settings.xml
+[DEBUG] Reading user settings from %USERDIRECTORY%\.m2\settings.xml
+[DEBUG] Using local repository at %USERDIRECTORY%\.m2\repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10 for %USERDIRECTORY%\.m2\repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project org.hibernate.tutorials:hibernate-tutorial:jar:1.0.0-SNAPSHOT: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Resolving plugin prefix exec from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Resolved plugin prefix exec to org.codehaus.mojo:exec-maven-plugin from POM org.hibernate.tutorials:hibernate-tutorial:jar:1.0.0-SNAPSHOT
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: org.hibernate.tutorials:hibernate-tutorial:jar:1.0.0-SNAPSHOT
+[DEBUG] Tasks:   [exec:java]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building First Hibernate Tutorial 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Resolving plugin prefix exec from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Resolved plugin prefix exec to org.codehaus.mojo:exec-maven-plugin from POM org.hibernate.tutorials:hibernate-tutorial:jar:1.0.0-SNAPSHOT
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.hibernate.tutorials:hibernate-tutorial:1.0.0-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [test]
+[DEBUG] Repositories (dependencies): [central (http://repo.maven.apache.org/maven2, releases)]
+[DEBUG] Repositories (plugins)     : [central (http://repo.maven.apache.org/maven2, releases)]
+[DEBUG] --- init fork of org.hibernate.tutorials:hibernate-tutorial:1.0.0-SNAPSHOT for org.codehaus.mojo:exec-maven-plugin:1.2.1:java (default-cli) ---
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): []
+[DEBUG] --- exit fork of org.hibernate.tutorials:hibernate-tutorial:1.0.0-SNAPSHOT for org.codehaus.mojo:exec-maven-plugin:1.2.1:java (default-cli) ---
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.codehaus.mojo:exec-maven-plugin:1.2.1:java (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <arguments>${exec.arguments}</arguments>
+  <classpathScope default-value="runtime">${exec.classpathScope}</classpathScope>
+  <cleanupDaemonThreads>${exec.cleanupDaemonThreads} default-value=</cleanupDaemonThreads>
+  <commandlineArgs>${exec.args}</commandlineArgs>
+  <daemonThreadJoinTimeout default-value="15000">${exec.daemonThreadJoinTimeout}</daemonThreadJoinTimeout>
+  <executableDependency>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+  </executableDependency>
+  <includePluginDependencies default-value="false">true</includePluginDependencies>
+  <includeProjectDependencies default-value="true">true</includeProjectDependencies>
+  <keepAlive default-value="false">${exec.keepAlive}</keepAlive>
+  <killAfter default-value="-1">${exec.killAfter}</killAfter>
+  <localRepository default-value="${localRepository}"/>
+  <mainClass>org.hibernate.tutorial.EventManager</mainClass>
+  <pluginDependencies default-value="${plugin.artifacts}"/>
+  <project default-value="${project}"/>
+  <remoteRepositories default-value="${project.remoteArtifactRepositories}"/>
+  <skip default-value="false">${skip}</skip>
+  <sourceRoot>${sourceRoot}</sourceRoot>
+  <stopUnresponsiveDaemonThreads>${exec.stopUnresponsiveDaemonThreads} default-value=</stopUnresponsiveDaemonThreads>
+  <testSourceRoot>${testSourceRoot}</testSourceRoot>
+</configuration>
+[DEBUG] =======================================================================
+[INFO]
+[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) @ hibernate-tutorial >>>
+[INFO]
+[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) @ hibernate-tutorial <<<
+[DEBUG] Could not find metadata org.hibernate:hibernate-core/maven-metadata.xml in local (%USERDIRECTORY%\.m2\repository)
+[DEBUG] Skipped remote update check for org.hibernate:hibernate-core/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Could not find metadata javax.servlet:servlet-api/maven-metadata.xml in local (%USERDIRECTORY%\.m2\repository)
+[DEBUG] Skipped remote update check for javax.servlet:servlet-api/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Could not find metadata org.slf4j:slf4j-simple/maven-metadata.xml in local (%USERDIRECTORY%\.m2\repository)
+[DEBUG] Skipped remote update check for org.slf4j:slf4j-simple/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Could not find metadata javassist:javassist/maven-metadata.xml in local (%USERDIRECTORY%\.m2\repository)
+[DEBUG] Skipped remote update check for javassist:javassist/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] org.hibernate.tutorials:hibernate-tutorial:jar:1.0.0-SNAPSHOT
+[DEBUG]    org.hibernate:hibernate-core:jar:RELEASE:compile
+[DEBUG]       org.jboss.logging:jboss-logging:jar:3.1.0.GA:compile
+[DEBUG]       org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:jar:1.0.0.Alpha1:compile
+[DEBUG]       dom4j:dom4j:jar:1.6.1:compile
+[DEBUG]          xml-apis:xml-apis:jar:1.0.b2:compile
+[DEBUG]       org.hibernate.common:hibernate-commons-annotations:jar:4.0.2.Final:compile
+[DEBUG]       org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.0.Draft-16:compile
+[DEBUG]       org.javassist:javassist:jar:3.15.0-GA:compile
+[DEBUG]       antlr:antlr:jar:2.7.7:compile
+[DEBUG]       org.jboss:jandex:jar:1.1.0.Alpha1:compile
+[DEBUG]    javax.servlet:servlet-api:jar:RELEASE:compile
+[DEBUG]    org.slf4j:slf4j-simple:jar:RELEASE:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.5:compile
+[DEBUG]    javassist:javassist:jar:RELEASE:compile
+[DEBUG]    hsqldb:hsqldb:jar:1.8.0.10:compile
+[DEBUG]    mysql:mysql-connector-java:jar:5.1.25:compile
+[DEBUG]    org.liquibase:liquibase-maven-plugin:jar:3.0.1:compile
+[DEBUG]       org.apache.maven:maven-plugin-api:jar:2.0:compile
+[DEBUG]       org.apache.maven:maven-project:jar:2.0:compile
+[DEBUG]          org.apache.maven:maven-profile:jar:2.0:compile
+[DEBUG]          org.apache.maven:maven-model:jar:2.0:compile
+[DEBUG]          org.apache.maven:maven-artifact-manager:jar:2.0:compile
+[DEBUG]             org.apache.maven:maven-repository-metadata:jar:2.0:compile
+[DEBUG]             org.apache.maven.wagon:wagon-provider-api:jar:1.0-alpha-5:compile
+[DEBUG]          org.codehaus.plexus:plexus-utils:jar:1.0.4:compile
+[DEBUG]          org.apache.maven:maven-artifact:jar:2.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-8:compile
+[DEBUG]             junit:junit:jar:3.8.1:compile
+[DEBUG]             classworlds:classworlds:jar:1.1-alpha-2:compile
+[DEBUG]       org.liquibase:liquibase-core:jar:3.0.1:compile
+[DEBUG]          org.yaml:snakeyaml:jar:1.12:compile
+[INFO]
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ hibernate-tutorial ---
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.transfer < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.metadata < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.collection < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.version < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.artifact < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.spi < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.graph < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.impl < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.deployment < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.installation < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.sonatype.aether.resolution < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG] Populating class realm maven.api
+[DEBUG] org.codehaus.mojo:exec-maven-plugin:jar:1.2.1:
+[DEBUG]    org.apache.maven:maven-toolchain:jar:1.0:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-model:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-core:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6:compile
+[DEBUG]       org.apache.maven.reporting:maven-reporting-api:jar:2.0.6:compile
+[DEBUG]          org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7:compile
+[DEBUG]       org.apache.maven:maven-error-diagnostics:jar:2.0.6:compile
+[DEBUG]       commons-cli:commons-cli:jar:1.0:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.6:compile
+[DEBUG]       org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[DEBUG]       org.apache.maven:maven-monitor:jar:2.0.6:compile
+[DEBUG]       classworlds:classworlds:jar:1.1:compile
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:2.0.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9:compile
+[DEBUG]       junit:junit:jar:3.8.2:test (scope managed from compile) (version managed from 3.8.1)
+[DEBUG]    org.apache.commons:commons-exec:jar:1.1:compile
+[DEBUG] Created new class realm plugin>org.codehaus.mojo:exec-maven-plugin:1.2.1
+[DEBUG] Importing foreign packages into class realm plugin>org.codehaus.mojo:exec-maven-plugin:1.2.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.codehaus.mojo:exec-maven-plugin:1.2.1
+[DEBUG]   Included: org.codehaus.mojo:exec-maven-plugin:jar:1.2.1
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.0.6
+[DEBUG]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7
+[DEBUG]   Included: commons-cli:commons-cli:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.5
+[DEBUG]   Included: org.apache.commons:commons-exec:jar:1.1
+[DEBUG]   Excluded: org.apache.maven:maven-toolchain:jar:1.0
+[DEBUG]   Excluded: org.apache.maven:maven-project:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-settings:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-profile:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-registry:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-model:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-artifact:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-artifact-manager:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-repository-metadata:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-core:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-error-diagnostics:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-descriptor:jar:2.0.6
+[DEBUG]   Excluded: org.apache.maven:maven-monitor:jar:2.0.6
+[DEBUG]   Excluded: classworlds:classworlds:jar:1.1
+[DEBUG]   Excluded: org.apache.maven:maven-plugin-api:jar:2.0.6
+[DEBUG]   Excluded: org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9
+[DEBUG]   Excluded: junit:junit:jar:3.8.2
+[DEBUG] Configuring mojo org.codehaus.mojo:exec-maven-plugin:1.2.1:java from plugin realm ClassRealm[plugin>org.codehaus.mojo:exec-maven-plugin:1.2.1, parent: sun.misc.Launcher$AppClassLoader@63c78e57]
+[DEBUG] Configuring mojo 'org.codehaus.mojo:exec-maven-plugin:1.2.1:java' with basic configurator -->
+[DEBUG]   (f) arguments = []
+[DEBUG]   (f) classpathScope = runtime
+[DEBUG]   (f) cleanupDaemonThreads = false
+[DEBUG]   (f) commandlineArgs = store
+[DEBUG]   (f) daemonThreadJoinTimeout = 15000
+[DEBUG]   (s) groupId = org.codehaus.mojo
+[DEBUG]   (s) artifactId = exec-maven-plugin
+[DEBUG]   (f) executableDependency = org.codehaus.mojo:exec-maven-plugin
+[DEBUG]   (f) includePluginDependencies = true
+[DEBUG]   (f) includeProjectDependencies = true
+[DEBUG]   (f) keepAlive = false
+[DEBUG]   (f) killAfter = -1
+[DEBUG]   (f) localRepository =        id: local
+      url: file:///%USERDIRECTORY%/.m2/repository/
+   layout: none
+
+[DEBUG]   (f) mainClass = org.hibernate.tutorial.EventManager
+[DEBUG]   (f) pluginDependencies = [org.codehaus.mojo:exec-maven-plugin:maven-plugin:1.2.1:, org.apache.maven.reporting:maven-reporting-api:jar:2.0.6:compile, org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7:compile, commons-cli:commons-cli:jar:1.0:compile, org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile, org.codehaus.plexus:plexus-utils:jar:2.0.5:compile, org.apache.commons:commons-exec:jar:1.1:compile]
+[DEBUG]   (f) project = MavenProject: org.hibernate.tutorials:hibernate-tutorial:1.0.0-SNAPSHOT @ %USERDIRECTORY%\Eclipse IDE\eclipse-jee-juno-win32-x86_64\workspaces\moi\hibernatetutorial\pom.xml
+[DEBUG]   (f) remoteRepositories = [       id: central
+      url: http://repo.maven.apache.org/maven2
+   layout: default
+snapshots: [enabled => false, update => daily]
+ releases: [enabled => true, update => daily]
+]
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) stopUnresponsiveDaemonThreads = false
+[DEBUG] -- end configuration --
+[DEBUG] Invoking : org.hibernate.tutorial.EventManager.main()
+[DEBUG] Selected plugin Dependencies will be included.
+[DEBUG] Adding plugin dependency artifact: maven-toolchain to classpath
+[DEBUG] Adding plugin dependency artifact: maven-core to classpath
+[DEBUG] Adding plugin dependency artifact: maven-settings to classpath
+[DEBUG] Adding plugin dependency artifact: maven-model to classpath
+[DEBUG] Adding plugin dependency artifact: plexus-utils to classpath
+[DEBUG] Adding plugin dependency artifact: plexus-container-default to classpath
+[DEBUG] Adding plugin dependency artifact: junit to classpath
+[DEBUG] Adding plugin dependency artifact: classworlds to classpath
+[DEBUG] Adding plugin dependency artifact: wagon-file to classpath
+[DEBUG] Adding plugin dependency artifact: wagon-provider-api to classpath
+[DEBUG] Adding plugin dependency artifact: maven-plugin-parameter-documenter to classpath
+[DEBUG] Adding plugin dependency artifact: wagon-http-lightweight to classpath
+[DEBUG] Adding plugin dependency artifact: wagon-http-shared to classpath
+[DEBUG] Adding plugin dependency artifact: jtidy to classpath
+[DEBUG] Adding plugin dependency artifact: xml-apis to classpath
+[DEBUG] Adding plugin dependency artifact: maven-reporting-api to classpath
+[DEBUG] Adding plugin dependency artifact: doxia-sink-api to classpath
+[DEBUG] Adding plugin dependency artifact: maven-profile to classpath
+[DEBUG] Adding plugin dependency artifact: maven-artifact to classpath
+[DEBUG] Adding plugin dependency artifact: maven-repository-metadata to classpath
+[DEBUG] Adding plugin dependency artifact: maven-error-diagnostics to classpath
+[DEBUG] Adding plugin dependency artifact: maven-project to classpath
+[DEBUG] Adding plugin dependency artifact: maven-artifact-manager to classpath
+[DEBUG] Adding plugin dependency artifact: maven-plugin-registry to classpath
+[DEBUG] Adding plugin dependency artifact: commons-cli to classpath
+[DEBUG] Adding plugin dependency artifact: maven-plugin-api to classpath
+[DEBUG] Adding plugin dependency artifact: wagon-ssh-external to classpath
+[DEBUG] Adding plugin dependency artifact: wagon-ssh-common to classpath
+[DEBUG] Adding plugin dependency artifact: plexus-interactivity-api to classpath
+[DEBUG] Adding plugin dependency artifact: maven-plugin-descriptor to classpath
+[DEBUG] Adding plugin dependency artifact: maven-monitor to classpath
+[DEBUG] Adding plugin dependency artifact: wagon-ssh to classpath
+[DEBUG] Adding plugin dependency artifact: jsch to classpath
+[DEBUG] Adding plugin dependency artifact: commons-exec to classpath
+[DEBUG] Adding plugin dependency artifact: maven-plugin-testing-harness to classpath
+[DEBUG] Adding plugin dependency artifact: plexus-archiver to classpath
+[DEBUG] Adding plugin dependency artifact: plexus-interpolation to classpath
+[DEBUG] Adding plugin dependency artifact: exec-maven-plugin to classpath
+[DEBUG] Project Dependencies will be included.
+[DEBUG] Collected project artifacts [org.hibernate:hibernate-core:jar:4.3.0.Beta3:compile, org.jboss.logging:jboss-logging:jar:3.1.0.GA:compile, org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:jar:1.0.0.Alpha1:compile, dom4j:dom4j:jar:1.6.1:compile, xml-apis:xml-apis:jar:1.0.b2:compile, org.hibernate.common:hibernate-commons-annotations:jar:4.0.2.Final:compile, org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.0.Draft-16:compile, org.javassist:javassist:jar:3.15.0-GA:compile, antlr:antlr:jar:2.7.7:compile, org.jboss:jandex:jar:1.1.0.Alpha1:compile, javax.servlet:servlet-api:jar:3.0-alpha-1:compile, org.slf4j:slf4j-simple:jar:1.7.5:compile, org.slf4j:slf4j-api:jar:1.7.5:compile, javassist:javassist:jar:3.12.1.GA:compile, hsqldb:hsqldb:jar:1.8.0.10:compile, mysql:mysql-connector-java:jar:5.1.25:compile, org.liquibase:liquibase-maven-plugin:maven-plugin:3.0.1:compile, org.apache.maven:maven-plugin-api:jar:2.0:compile, org.apache.maven:maven-project:jar:2.0:compile, org.apache.maven:maven-profile:jar:2.0:compile, org.apache.maven:maven-model:jar:2.0:compile, org.apache.maven:maven-artifact-manager:jar:2.0:compile, org.apache.maven:maven-repository-metadata:jar:2.0:compile, org.apache.maven.wagon:wagon-provider-api:jar:1.0-alpha-5:compile, org.codehaus.plexus:plexus-utils:jar:1.0.4:compile, org.apache.maven:maven-artifact:jar:2.0:compile, org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-8:compile, junit:junit:jar:3.8.1:compile, classworlds:classworlds:jar:1.1-alpha-2:compile, org.liquibase:liquibase-core:jar:3.0.1:compile, org.yaml:snakeyaml:jar:1.12:compile]
+[DEBUG] Collected project classpath [%USERDIRECTORY%\Eclipse IDE\eclipse-jee-juno-win32-x86_64\workspaces\moi\hibernatetutorial\target\classes]
+[DEBUG] Adding to classpath : file:/%USERDIRECTORY%/Eclipse%20IDE/eclipse-jee-juno-win32-x86_64/workspaces/moi/hibernatetutorial/target/classes/
+[DEBUG] Adding project dependency artifact: hibernate-core to classpath
+[DEBUG] Adding project dependency artifact: jboss-logging to classpath
+[DEBUG] Adding project dependency artifact: jboss-transaction-api_1.2_spec to classpath
+[DEBUG] Adding project dependency artifact: dom4j to classpath
+[DEBUG] Adding project dependency artifact: xml-apis to classpath
+[DEBUG] Adding project dependency artifact: hibernate-commons-annotations to classpath
+[DEBUG] Adding project dependency artifact: hibernate-jpa-2.1-api to classpath
+[DEBUG] Adding project dependency artifact: javassist to classpath
+[DEBUG] Adding project dependency artifact: antlr to classpath
+[DEBUG] Adding project dependency artifact: jandex to classpath
+[DEBUG] Adding project dependency artifact: servlet-api to classpath
+[DEBUG] Adding project dependency artifact: slf4j-simple to classpath
+[DEBUG] Adding project dependency artifact: slf4j-api to classpath
+[DEBUG] Adding project dependency artifact: javassist to classpath
+[DEBUG] Adding project dependency artifact: hsqldb to classpath
+[DEBUG] Adding project dependency artifact: mysql-connector-java to classpath
+[DEBUG] Adding project dependency artifact: liquibase-maven-plugin to classpath
+[DEBUG] Adding project dependency artifact: maven-plugin-api to classpath
+[DEBUG] Adding project dependency artifact: maven-project to classpath
+[DEBUG] Adding project dependency artifact: maven-profile to classpath
+[DEBUG] Adding project dependency artifact: maven-model to classpath
+[DEBUG] Adding project dependency artifact: maven-artifact-manager to classpath
+[DEBUG] Adding project dependency artifact: maven-repository-metadata to classpath
+[DEBUG] Adding project dependency artifact: wagon-provider-api to classpath
+[DEBUG] Adding project dependency artifact: plexus-utils to classpath
+[DEBUG] Adding project dependency artifact: maven-artifact to classpath
+[DEBUG] Adding project dependency artifact: plexus-container-default to classpath
+[DEBUG] Adding project dependency artifact: junit to classpath
+[DEBUG] Adding project dependency artifact: classworlds to classpath
+[DEBUG] Adding project dependency artifact: liquibase-core to classpath
+[DEBUG] Adding project dependency artifact: snakeyaml to classpath
+[DEBUG] joining on thread Thread[org.hibernate.tutorial.EventManager.main(),5,org.hibernate.tutorial.EventManager]
+[DEBUG] Setting accessibility to true in order to invoke main().
+31 juil. 2013 13:02:42 org.hibernate.annotations.common.Version <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+31 juil. 2013 13:02:42 org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.0.Beta3}
+31 juil. 2013 13:02:42 org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+31 juil. 2013 13:02:42 org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+31 juil. 2013 13:02:42 org.hibernate.cfg.Configuration configure
+INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
+31 juil. 2013 13:02:42 org.hibernate.cfg.Configuration getConfigurationInputStream
+INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
+31 juil. 2013 13:02:42 org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Mi
+gration Guide!
+31 juil. 2013 13:02:42 org.hibernate.cfg.Configuration addResource
+INFO: HHH000221: Reading mappings from resource: org/hibernate/tutorial/domain/Event.hbm.xml
+31 juil. 2013 13:02:42 org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Mi
+gration Guide!
+31 juil. 2013 13:02:42 org.hibernate.cfg.Configuration doConfigure
+INFO: HHH000041: Configured SessionFactory: null
+31 juil. 2013 13:02:42 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+31 juil. 2013 13:02:42 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000115: Hibernate connection pool size: 1
+31 juil. 2013 13:02:42 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000006: Autocommit mode: false
+31 juil. 2013 13:02:42 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000401: using driver [org.hsqldb.jdbcDriver] at URL [jdbc:hsqldb:hsql://localhost/]
+31 juil. 2013 13:02:42 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000046: Connection properties: {user=sa, password=****}
+31 juil. 2013 13:02:42 org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+31 juil. 2013 13:02:42 org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
+INFO: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+31 juil. 2013 13:02:42 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
+31 juil. 2013 13:02:42 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+31 juil. 2013 13:02:43 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000228: Running hbm2ddl schema update
+31 juil. 2013 13:02:43 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000102: Fetching database metadata
+31 juil. 2013 13:02:43 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000396: Updating schema
+31 juil. 2013 13:02:43 org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: PUBLIC.EVENTS
+31 juil. 2013 13:02:43 org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [title, event_date, event_id]
+31 juil. 2013 13:02:43 org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+31 juil. 2013 13:02:43 org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [sys_idx_47]
+31 juil. 2013 13:02:43 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000232: Schema update complete
+Hibernate: insert into EVENTS (EVENT_ID, EVENT_DATE, title) values (null, ?, ?)
+31 juil. 2013 13:02:43 org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: -20, SQLState: IM001
+31 juil. 2013 13:02:43 org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: This function is not supported
+[WARNING]
+java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:297)
+        at java.lang.Thread.run(Thread.java:662)
+Caused by: org.hibernate.exception.GenericJDBCException: could not prepare statement
+        at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54)
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+        at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:191)
+        at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareStatement(StatementPreparerImpl.java:124)
+        at org.hibernate.id.insert.AbstractSelectingDelegate.performInsert(AbstractSelectingDelegate.java:55)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2978)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3490)
+        at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:97)
+        at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:377)
+        at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:214)
+        at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:194)
+        at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:178)
+        at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:322)
+        at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+        at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+        at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:126)
+        at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:208)
+        at org.hibernate.event.internal.DefaultSaveEventListener.saveWithGeneratedOrRequestedId(DefaultSaveEventListener.java:55)
+        at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:193)
+        at org.hibernate.event.internal.DefaultSaveEventListener.performSaveOrUpdate(DefaultSaveEventListener.java:49)
+        at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:92)
+        at org.hibernate.internal.SessionImpl.fireSave(SessionImpl.java:765)
+        at org.hibernate.internal.SessionImpl.save(SessionImpl.java:757)
+        at org.hibernate.internal.SessionImpl.save(SessionImpl.java:753)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:356)
+        at $Proxy17.save(Unknown Source)
+        at org.hibernate.tutorial.EventManager.createAndStoreEvent(EventManager.java:43)
+        at org.hibernate.tutorial.EventManager.main(EventManager.java:16)
+        ... 6 more
+Caused by: java.sql.SQLException: This function is not supported
+        at org.hsqldb.jdbc.Util.sqlException(Unknown Source)
+        at org.hsqldb.jdbc.Util.notSupported(Unknown Source)
+        at org.hsqldb.jdbc.jdbcConnection.prepareStatement(Unknown Source)
+        at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$2.doPrepare(StatementPreparerImpl.java:126)
+        at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:185)
+        ... 35 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.814s
+[INFO] Finished at: Wed Jul 31 13:02:43 CEST 2013
+[INFO] Final Memory: 6M/86M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.2.1:java (default-cli) on project hibernate-tutorial: An exception occured while executing the Java c
+lass. null: InvocationTargetException: could not prepare statement: This function is not supported -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.2.1:java (default-cli) on project hibernate-tutorial:
+ An exception occured while executing the Java class. null
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:217)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+        at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+        at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+        at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+        at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+        at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+        at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+        at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+Caused by: org.apache.maven.plugin.MojoExecutionException: An exception occured while executing the Java class. null
+        at org.codehaus.mojo.exec.ExecJavaMojo.execute(ExecJavaMojo.java:352)
+        at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+        ... 19 more
+Caused by: java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:297)
+        at java.lang.Thread.run(Thread.java:662)
+Caused by: org.hibernate.exception.GenericJDBCException: could not prepare statement
+        at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54)
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+        at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:191)
+        at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareStatement(StatementPreparerImpl.java:124)
+        at org.hibernate.id.insert.AbstractSelectingDelegate.performInsert(AbstractSelectingDelegate.java:55)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2978)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3490)
+        at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:97)
+        at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:377)
+        at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:214)
+        at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:194)
+        at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:178)
+        at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:322)
+        at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+        at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+        at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:126)
+        at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:208)
+        at org.hibernate.event.internal.DefaultSaveEventListener.saveWithGeneratedOrRequestedId(DefaultSaveEventListener.java:55)
+        at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:193)
+        at org.hibernate.event.internal.DefaultSaveEventListener.performSaveOrUpdate(DefaultSaveEventListener.java:49)
+        at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:92)
+        at org.hibernate.internal.SessionImpl.fireSave(SessionImpl.java:765)
+        at org.hibernate.internal.SessionImpl.save(SessionImpl.java:757)
+        at org.hibernate.internal.SessionImpl.save(SessionImpl.java:753)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:356)
+        at $Proxy17.save(Unknown Source)
+        at org.hibernate.tutorial.EventManager.createAndStoreEvent(EventManager.java:43)
+        at org.hibernate.tutorial.EventManager.main(EventManager.java:16)
+        ... 6 more
+Caused by: java.sql.SQLException: This function is not supported
+        at org.hsqldb.jdbc.Util.sqlException(Unknown Source)
+        at org.hsqldb.jdbc.Util.notSupported(Unknown Source)
+        at org.hsqldb.jdbc.jdbcConnection.prepareStatement(Unknown Source)
+        at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$2.doPrepare(StatementPreparerImpl.java:126)
+        at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:185)
+        ... 35 more
+[ERROR]
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
