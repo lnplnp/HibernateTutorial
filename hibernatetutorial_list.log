@@ -1,0 +1,79 @@
+$PROMPT$ mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="list"
+
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building First Hibernate Tutorial 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) @ hibernate-tutorial >>>
+[INFO]
+[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) @ hibernate-tutorial <<<
+[INFO]
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ hibernate-tutorial ---
+31 juil. 2013 12:24:24 org.hibernate.annotations.common.Version <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+31 juil. 2013 12:24:24 org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.0.Beta3}
+31 juil. 2013 12:24:24 org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+31 juil. 2013 12:24:24 org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+31 juil. 2013 12:24:24 org.hibernate.cfg.Configuration configure
+INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
+31 juil. 2013 12:24:24 org.hibernate.cfg.Configuration getConfigurationInputStream
+INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
+31 juil. 2013 12:24:24 org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer
+ to Hibernate 3.6 Migration Guide!
+31 juil. 2013 12:24:24 org.hibernate.cfg.Configuration addResource
+INFO: HHH000221: Reading mappings from resource: org/hibernate/tutorial/domain/Event.hbm.xml
+31 juil. 2013 12:24:24 org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer
+ to Hibernate 3.6 Migration Guide!
+31 juil. 2013 12:24:24 org.hibernate.cfg.Configuration doConfigure
+INFO: HHH000041: Configured SessionFactory: null
+31 juil. 2013 12:24:24 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+31 juil. 2013 12:24:24 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000115: Hibernate connection pool size: 1
+31 juil. 2013 12:24:24 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000006: Autocommit mode: false
+31 juil. 2013 12:24:24 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000401: using driver [org.hsqldb.jdbcDriver] at URL [jdbc:hsqldb:hsql://localhost/]
+31 juil. 2013 12:24:24 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000046: Connection properties: {user=sa, password=****}
+31 juil. 2013 12:24:24 org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+31 juil. 2013 12:24:24 org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
+INFO: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+31 juil. 2013 12:24:24 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
+31 juil. 2013 12:24:24 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+31 juil. 2013 12:24:24 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000228: Running hbm2ddl schema update
+31 juil. 2013 12:24:24 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000102: Fetching database metadata
+31 juil. 2013 12:24:24 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000396: Updating schema
+31 juil. 2013 12:24:24 org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: PUBLIC.EVENTS
+31 juil. 2013 12:24:24 org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [title, event_date, event_id]
+31 juil. 2013 12:24:24 org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+31 juil. 2013 12:24:24 org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [sys_idx_47]
+31 juil. 2013 12:24:24 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000232: Schema update complete
+Hibernate: select event0_.EVENT_ID as EVENT1_0_, event0_.EVENT_DATE as EVENT2_0_, event0_.title as title3_0_ from EVENTS event0_
+31 juil. 2013 12:24:25 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl stop
+INFO: HHH000030: Cleaning up connection pool [jdbc:hsqldb:hsql://localhost/]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.799s
+[INFO] Finished at: Wed Jul 31 12:24:25 CEST 2013
+[INFO] Final Memory: 6M/161M
+[INFO] ------------------------------------------------------------------------
