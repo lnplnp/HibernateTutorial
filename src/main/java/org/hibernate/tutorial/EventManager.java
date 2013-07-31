@@ -50,7 +50,7 @@ public class EventManager {
     return result;
   }
 
-  private void createAndStoreEvent(String title, Date theDate) {
+  private Long createAndStoreEvent(String title, Date theDate) {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
 
