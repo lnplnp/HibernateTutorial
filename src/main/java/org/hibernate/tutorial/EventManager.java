@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.tutorial.domain.Event;
+import org.hibernate.tutorial.domain.Person;
 import org.hibernate.tutorial.util.HibernateUtil;
 
 public class EventManager {
@@ -20,9 +21,25 @@ public class EventManager {
         Event theEvent = (Event) events.get(i);
         System.out.println("Event: " + theEvent.getTitle() + " Time: " + theEvent.getDate());
       }
+    } else if (args[0].equals("addpersontoevent")) {
+      Long eventId = mgr.createAndStoreEvent("My Event", new Date());
+      Long personId = mgr.createAndStorePerson("Foo", "Bar");
+      mgr.addPersonToEvent(personId, eventId);
+      System.out.println("Added person " + personId + " to event " + eventId);
     }
 
     HibernateUtil.getSessionFactory().close();
+  }
+
+  private Long createAndStorePerson(String string, String string2) {
+    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+    session.beginTransaction();
+
+    Person thePerson = new Person();
+    session.save(thePerson);
+
+    session.getTransaction().commit();
+    return thePerson.getId();
   }
 
   private List<?> listEvents() {
@@ -41,6 +58,18 @@ public class EventManager {
     theEvent.setTitle(title);
     theEvent.setDate(theDate);
     session.save(theEvent);
+
+    session.getTransaction().commit();
+    return theEvent.getId();
+  }
+
+  private void addPersonToEvent(Long personId, Long eventId) {
+    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+    session.beginTransaction();
+
+    Person aPerson = (Person) session.load(Person.class, personId);
+    Event anEvent = (Event) session.load(Event.class, eventId);
+    aPerson.getEvents().add(anEvent);
 
     session.getTransaction().commit();
   }
