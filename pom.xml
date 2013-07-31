@@ -76,6 +76,7 @@
       <version>RELEASE</version>
     </dependency>
 
+    <!-- HSQLDB n'est pas inclut dans les dépendances de HIBERNATE -->
     <dependency>
       <groupId>hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
