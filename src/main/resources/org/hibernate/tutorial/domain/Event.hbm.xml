@@ -6,7 +6,7 @@
 <hibernate-mapping package="org.hibernate.tutorial.domain">
   <class name="Event" table="EVENTS">
     <id name="id" column="EVENT_ID">
-      <generator class="native" />
+      <generator class="sequence" />
     </id>
     <property name="date" type="timestamp" column="EVENT_DATE" />
     <property name="title" />
