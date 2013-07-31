@@ -19,6 +19,8 @@ public class Person {
 
   public Set<Event> events = new HashSet<Event>();
 
+  private Set<String> emailAddresses = new HashSet<String>();
+
   /**
    * 
    */
@@ -66,4 +68,11 @@ public class Person {
     this.lastname = lastname;
   }
 
+  public Set<String> getEmailAddresses() {
+    return emailAddresses;
+  }
+
+  public void setEmailAddresses(Set<String> emailAddresses) {
+    this.emailAddresses = emailAddresses;
+  }
 }
