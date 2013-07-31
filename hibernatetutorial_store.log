@@ -1,4 +1,4 @@
-$PROMPT$ mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="store"
+> mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="store"
 
 [INFO] Scanning for projects...
 [INFO]
