@@ -40,7 +40,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.2</version>
+        <version>3.3</version>
         <configuration>
           <outputEncoding>UTF-8</outputEncoding>
         </configuration>
@@ -70,7 +70,6 @@
       <version>RELEASE</version>
     </dependency>
 
-    <!-- Hibernate gives you a choice of bytecode providers between cglib and javassist -->
     <dependency>
       <groupId>javassist</groupId>
       <artifactId>javassist</artifactId>
@@ -84,17 +83,11 @@
     </dependency>
 
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.25</version>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>exec-maven-plugin</artifactId>
+      <version>RELEASE</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.liquibase</groupId>
-      <artifactId>liquibase-maven-plugin</artifactId>
-      <version>3.0.1</version>
-      <type>maven-plugin</type>
-    </dependency>
   </dependencies>
 
 </project>
