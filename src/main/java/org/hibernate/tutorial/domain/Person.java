@@ -27,14 +27,6 @@ public class Person {
   public Person() {
   }
 
-  public Set<Event> getEvents() {
-    return this.events;
-  }
-
-  public void setEvents(Set<Event> events) {
-    this.events = events;
-  }
-
   public Long getId() {
     return id;
   }
@@ -66,6 +58,24 @@ public class Person {
 
   public void setLastname(String lastname) {
     this.lastname = lastname;
+  }
+
+  public Set<Event> getEvents() {
+    return this.events;
+  }
+
+  public void setEvents(Set<Event> events) {
+    this.events = events;
+  }
+
+  public void addToEvent(Event event) {
+    this.getEvents().add(event);
+    event.getParticipants().add(this);
+  }
+
+  public void removeFromEvent(Event event) {
+    this.getEvents().remove(event);
+    event.getParticipants().remove(this);
   }
 
   public Set<String> getEmailAddresses() {
