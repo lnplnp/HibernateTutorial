@@ -80,6 +80,7 @@ public class EventManager {
   private List<?> listEvents() {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
+
     List<?> result = session.createQuery("from Event").list();
     session.getTransaction().commit();
     return result;
@@ -119,6 +120,31 @@ public class EventManager {
     aPerson.getEvents().add(anEvent);
 
     session.getTransaction().commit();
+  }
+
+  private void addPersonToEvent2(Long personId, Long eventId) {
+    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+    session.beginTransaction();
+
+    Person aPerson = (Person) session.createQuery("select p from Person p left join fetch p.events where p.id = :pid").setParameter("pid", personId).uniqueResult();
+    /* Eager fetch the collection so we can use it detached */
+
+    Event anEvent = (Event) session.load(Event.class, eventId);
+
+    session.getTransaction().commit();
+
+    /* End of first unit of work */
+
+    /* aPerson (and its collection) is detached */
+    aPerson.getEvents().add(anEvent);
+
+    /* Begin second unit of work */
+
+    Session session2 = HibernateUtil.getSessionFactory().getCurrentSession();
+    session2.beginTransaction();
+    session2.update(aPerson); /* Reattachment of aPerson */
+
+    session2.getTransaction().commit();
   }
 
   private void addEmailToPerson(Long personId, String emailAddress) {
