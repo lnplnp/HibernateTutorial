@@ -80,6 +80,18 @@ public class EventManager {
     return theEvent.getId();
   }
 
+  private void addRandomExistingPersonToRandomExistingEvent() {
+    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+    session.beginTransaction();
+
+    Person aPerson = (Person) session.createSQLQuery("SELECT * FROM persons ORDER BY RAND() LIMIT 1").addEntity(Person.class).list().get(0);
+    Event anEvent = (Event) session.createSQLQuery("SELECT * FROM events ORDER BY RAND() LIMIT 1").addEntity(Event.class).list().get(0);
+
+    aPerson.getEvents().add(anEvent);
+
+    session.getTransaction().commit();
+  }
+
   private void addPersonToEvent(Long personId, Long eventId) {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
