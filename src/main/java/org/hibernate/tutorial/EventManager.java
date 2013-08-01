@@ -16,43 +16,61 @@ public class EventManager {
   public static void main(String[] args) {
     EventManager mgr = new EventManager();
 
+    FirstNameProvider firstNameProvider = new FirstNameProvider();
+    LastNameProvider lastNameProvider = new LastNameProvider();
     if (args[0].equals("store")) {
-      mgr.createAndStoreEvent("My Event" + System.currentTimeMillis(), new Date());
+      for (int i = 0; i < 10; i++) {
+        String firstName = firstNameProvider.getName();
+        String lastName = lastNameProvider.getName();
+        mgr.createAndStorePerson(firstName, lastName);
+        mgr.createAndStoreEvent("My Event" + System.currentTimeMillis(), new Date());
+      }
     } else if (args[0].equals("list")) {
       List<?> events = mgr.listEvents();
       for (int i = 0; i < events.size(); i++) {
         Event theEvent = (Event) events.get(i);
         System.out.println("Event: " + theEvent.getTitle() + " Time: " + theEvent.getDate());
       }
-    } else {
-      String firstName = new FirstNameProvider().getName();
-      String lastName = new LastNameProvider().getName();
-      if (args[0].equals("addpersontoevent")) {
-        Long eventId = mgr.createAndStoreEvent("My Event" + System.currentTimeMillis(), new Date());
-        Long personId = mgr.createAndStorePerson(firstName, lastName);
-        mgr.addPersonToEvent(personId, eventId);
-        System.out.println("Added person " + personId + " to event " + eventId);
-      } else if (args[0].equals("addemailtoperson")) {
-        Long personId = mgr.createAndStorePerson(firstName, lastName);
-        for (int i = 0; i < 3; i++) {
-          String emailAddress = String.format("%s.%s.%s@host.fr", firstName, lastName, System.currentTimeMillis());
-          mgr.addEmailToPerson(personId, emailAddress);
-          System.out.println("Added person " + personId + " and his email " + emailAddress);
-        }
+    } else if (args[0].equals("addpersontoevent")) {
+      Long eventId = null;
+      Long personId = null;
+
+      eventId = mgr.createAndStoreEvent("My Event" + System.currentTimeMillis(), new Date());
+      personId = mgr.createAndStorePerson(firstNameProvider.getName(), lastNameProvider.getName());
+      mgr.addPersonToEvent(personId, eventId);
+      System.out.println("1. Added person " + personId + " to event " + eventId);
+
+      eventId = mgr.createAndStoreEvent("My Event" + System.currentTimeMillis(), new Date());
+      personId = mgr.createAndStorePerson(firstNameProvider.getName(), lastNameProvider.getName());
+      mgr.addPersonToEvent2(personId, eventId);
+      System.out.println("2. Added person " + personId + " to event " + eventId);
+    } else if (args[0].equals("addpersontoevent2")) {
+      for (int i = 0; i < 10; i++) {
+        mgr.addRandomExistingPersonToRandomExistingEvent();
+      }
+      System.out.println("Added a Random Existing Person To a Random Existing Event");
+    } else if (args[0].equals("addemailtoperson")) {
+      String firstName = firstNameProvider.getName();
+      String lastName = lastNameProvider.getName();
+      Long personId = mgr.createAndStorePerson(firstName, lastName);
+      for (int i = 0; i < 3; i++) {
+        String emailAddress = String.format("%s.%s.%s@host.fr", firstName, lastName, System.currentTimeMillis());
+        mgr.addEmailToPerson(personId, emailAddress);
+        System.out.println("Added person " + personId + " and his email " + emailAddress);
       }
     }
 
     HibernateUtil.getSessionFactory().close();
   }
 
-  private Long createAndStorePerson(String firstname, String lastname) {
+  private Long createAndStorePerson(String firstName, String lastName) {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
 
     Person thePerson = new Person();
-    thePerson.setFirstname(firstname);
-    thePerson.setLastname(lastname);
-    thePerson.setAge(firstname.length() + lastname.length());
+    thePerson.setFirstname(firstName);
+    thePerson.setLastname(lastName);
+    thePerson.setAge(firstName.length() + lastName.length());
     session.save(thePerson);
 
     session.getTransaction().commit();
