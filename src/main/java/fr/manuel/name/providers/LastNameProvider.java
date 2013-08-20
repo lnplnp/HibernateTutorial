@@ -1,16 +1,16 @@
 /**
  * 
  */
-package fr.manuel.name;
+package fr.manuel.name.providers;
 
 /**
  * @author Manuel
  * 
  */
-public class FirstNameProvider extends NameProvider {
+public class LastNameProvider extends NameProvider {
 
-  public FirstNameProvider() {
-    namesProvider = "src/main/resources/prenoms.txt";
+  public LastNameProvider() {
+    namesProvider = "src/main/resources/noms.txt";
   }
 
   /**
@@ -18,7 +18,7 @@ public class FirstNameProvider extends NameProvider {
    */
   public static void main(String[] args) {
     NameProvider nameProvider;
-    nameProvider = new FirstNameProvider();
+    nameProvider = new LastNameProvider();
     System.out.println(nameProvider.getName());
     System.out.println(nameProvider.getName());
     System.out.println(nameProvider.getName());
