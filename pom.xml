@@ -105,6 +105,17 @@
       <version>RELEASE</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-hibernate</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+
   </dependencies>
 
 </project>
