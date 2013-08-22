@@ -33,6 +33,8 @@
 
     <mapping resource="org/hibernate/tutorial/domain/Event.hbm.xml" />
     <mapping resource="org/hibernate/tutorial/domain/Person.hbm.xml" />
+    <mapping resource="fr/manuelpayet/name/FirstName.hbm.xml" />
+    <mapping resource="fr/manuelpayet/name/LastName.hbm.xml" />
 
   </session-factory>
 
