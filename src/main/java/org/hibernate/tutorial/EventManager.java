@@ -8,8 +8,8 @@ import org.hibernate.tutorial.domain.Event;
 import org.hibernate.tutorial.domain.Person;
 import org.hibernate.tutorial.util.HibernateUtil;
 
-import fr.manuel.name.providers.FirstNameProvider;
-import fr.manuel.name.providers.LastNameProvider;
+import fr.manuelpayet.name.providers.FirstNameProvider;
+import fr.manuelpayet.name.providers.LastNameProvider;
 
 public class EventManager {
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.manuel.name.providers;
+package fr.manuelpayet.name.providers;
 
 /**
  * @author Manuel

@@ -1,4 +1,4 @@
-package fr.manuel.name.providers;
+package fr.manuelpayet.name.providers;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
