@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="hibernatetutorialRollingFile" packages="fr.manuel, org.hibernate"
+  monitorInterval="30">
+  <appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout
+        pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+    </Console>
+
+    <RollingFile name="hibernatetutorialRollingFile" fileName="./logs/hibernatetutorial.log"
+      filePattern="logs/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.hibernatetutorial.log">
+      <PatternLayout>
+        <pattern>%d %p %c [%t] %m%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="6"
+          modulate="true" />
+        <SizeBasedTriggeringPolicy size="250 MB" />
+      </Policies>
+    </RollingFile>
+
+  </appenders>
+
+  <loggers>
+    <root level="debug">
+      <appender-ref ref="Console" />
+    </root>
+    <logger name="hibernatetutorial" level="debug">
+      <appender-ref ref="hibernatetutorialRollingFile" />
+    </logger>
+  </loggers>
+
+</configuration>

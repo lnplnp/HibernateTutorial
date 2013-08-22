@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,11 +15,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.tutorial.domain.Event;
 import org.hibernate.tutorial.util.HibernateUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("serial")
 public class EventManagerServlet extends HttpServlet {
 
+  private static Logger logger = LoggerFactory.getLogger(EventManagerServlet.class);
+
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    logger.info("*** doGet {}", request);
 
     SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
 
@@ -30,6 +37,9 @@ public class EventManagerServlet extends HttpServlet {
       // Write HTML header
       PrintWriter out = response.getWriter();
       out.println("<html><head><title>Event Manager</title></head><body>");
+
+      out.println("<p>" + System.getProperty("user.dir") + "</p>");
+      out.println("<p>" + getServletContext().getServletContextName() + "</p>");
 
       // Handle actions
       if ("store".equals(request.getParameter("action"))) {
@@ -72,17 +82,19 @@ public class EventManagerServlet extends HttpServlet {
     List<Event> result = HibernateUtil.getSessionFactory().getCurrentSession().createCriteria(Event.class).list();
     if (result.size() > 0) {
       out.println("<h2>Events in database:</h2>");
-      out.println("<table border='1'>");
+      out.println("<table style=\"border:1px solid black\">");
       out.println("<tr>");
       out.println("<th>Event title</th>");
       out.println("<th>Event date</th>");
       out.println("</tr>");
       Iterator<Event> it = result.iterator();
+      Random rand = new Random();
       while (it.hasNext()) {
         Event event = (Event) it.next();
+        String color = "rgb(" + rand.nextInt(255) + "," + rand.nextInt(255) + "," + rand.nextInt(255) + ")";
         out.println("<tr>");
-        out.println("<td>" + event.getTitle() + "</td>");
-        out.println("<td>" + dateFormatter.format(event.getDate()) + "</td>");
+        out.println("<td style=\"border:1px solid " + color + "\">" + event.getTitle() + "</td>");
+        out.println("<td style=\"border:1px solid " + color + "\">" + dateFormatter.format(event.getDate()) + "</td>");
         out.println("</tr>");
       }
       out.println("</table>");

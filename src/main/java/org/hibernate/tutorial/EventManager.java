@@ -7,11 +7,15 @@ import org.hibernate.Session;
 import org.hibernate.tutorial.domain.Event;
 import org.hibernate.tutorial.domain.Person;
 import org.hibernate.tutorial.util.HibernateUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import fr.manuelpayet.name.providers.FirstNameProvider;
 import fr.manuelpayet.name.providers.LastNameProvider;
 
 public class EventManager {
+
+  private static Logger log = LoggerFactory.getLogger(EventManager.class);
 
   public static void main(String[] args) {
     EventManager mgr = new EventManager();
@@ -29,7 +33,7 @@ public class EventManager {
       List<?> events = mgr.listEvents();
       for (int i = 0; i < events.size(); i++) {
         Event theEvent = (Event) events.get(i);
-        System.out.println("Event: " + theEvent.getTitle() + " Time: " + theEvent.getDate());
+        log.info("Event: " + theEvent.getTitle() + " Time: " + theEvent.getDate());
       }
     } else if (args[0].equals("addpersontoevent")) {
       Long eventId = null;
@@ -38,17 +42,17 @@ public class EventManager {
       eventId = mgr.createAndStoreEvent("My Event" + System.currentTimeMillis(), new Date());
       personId = mgr.createAndStorePerson(firstNameProvider.getName(), lastNameProvider.getName());
       mgr.addPersonToEvent(personId, eventId);
-      System.out.println("1. Added person " + personId + " to event " + eventId);
+      log.info("1. Added person " + personId + " to event " + eventId);
 
       eventId = mgr.createAndStoreEvent("My Event" + System.currentTimeMillis(), new Date());
       personId = mgr.createAndStorePerson(firstNameProvider.getName(), lastNameProvider.getName());
       mgr.addPersonToEvent2(personId, eventId);
-      System.out.println("2. Added person " + personId + " to event " + eventId);
+      log.info("2. Added person " + personId + " to event " + eventId);
     } else if (args[0].equals("addpersontoevent2")) {
       for (int i = 0; i < 10; i++) {
         mgr.addRandomExistingPersonToRandomExistingEvent();
       }
-      System.out.println("Added a Random Existing Person To a Random Existing Event");
+      log.info("Added a Random Existing Person To a Random Existing Event");
     } else if (args[0].equals("addemailtoperson")) {
       String firstName = firstNameProvider.getName();
       String lastName = lastNameProvider.getName();
@@ -56,7 +60,7 @@ public class EventManager {
       for (int i = 0; i < 3; i++) {
         String emailAddress = String.format("%s.%s.%s@host.fr", firstName, lastName, System.currentTimeMillis());
         mgr.addEmailToPerson(personId, emailAddress);
-        System.out.println("Added person " + personId + " and his email " + emailAddress);
+        log.info("Added person " + personId + " and his email " + emailAddress);
       }
     }
 
