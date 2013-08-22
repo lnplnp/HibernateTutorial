@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <context-param>
+    <param-name>log4jContextName</param-name>
+    <param-value>hibernate-tutorial</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4jConfiguration</param-name>
+    <param-value>file://c:/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/hibernate-tutorial/WEB-INF/classes/log4j2.xml</param-value>
+  </context-param>
+
   <servlet>
     <servlet-name>Event Manager</servlet-name>
     <servlet-class>org.hibernate.tutorial.web.EventManagerServlet</servlet-class>
