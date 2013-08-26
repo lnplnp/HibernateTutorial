@@ -8,13 +8,20 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public abstract class NameProvider {
+
+  private static Logger log = LoggerFactory.getLogger(NameProvider.class);
 
   protected String namesProvider = null;
 
   private Set<String> names;
 
   public String getName() {
+    log.debug("");
+
     names = new HashSet<String>();
 
     try {
@@ -31,7 +38,7 @@ public abstract class NameProvider {
       // Close the input stream
       in.close();
     } catch (Exception e) {// Catch exception if any
-      System.err.println("Error: " + e.getMessage());
+      log.error("Error : {}", e.getMessage());
     }
 
     Object[] namesArray = names.toArray();

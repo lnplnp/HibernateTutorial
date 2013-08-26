@@ -21,11 +21,12 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("serial")
 public class EventManagerServlet extends HttpServlet {
 
-  private static Logger logger = LoggerFactory.getLogger(EventManagerServlet.class);
+  private static Logger log = LoggerFactory.getLogger(EventManagerServlet.class);
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    log.debug("");
 
-    logger.info("*** doGet {}", request);
+    log.info("*** doGet {}", request);
 
     SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
 
@@ -78,6 +79,7 @@ public class EventManagerServlet extends HttpServlet {
 
   @SuppressWarnings("unchecked")
   private void listEvents(PrintWriter out, SimpleDateFormat dateFormatter) {
+    log.debug("");
 
     List<Event> result = HibernateUtil.getSessionFactory().getCurrentSession().createCriteria(Event.class).list();
     if (result.size() > 0) {
@@ -102,6 +104,7 @@ public class EventManagerServlet extends HttpServlet {
   }
 
   private void printEventForm(PrintWriter out) {
+    log.debug("");
     out.println("<h2>Add new event:</h2>");
     out.println("<form>");
     out.println("Title: <input name='eventTitle' length='50'/><br/>");
@@ -111,6 +114,7 @@ public class EventManagerServlet extends HttpServlet {
   }
 
   protected void createAndStoreEvent(String title, Date theDate) {
+    log.debug("");
     Event theEvent = new Event();
     theEvent.setTitle(title);
     theEvent.setDate(theDate);

@@ -6,11 +6,16 @@ package org.hibernate.tutorial.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author Manuel
  * 
  */
 public class Person {
+
+  private static Logger log = LoggerFactory.getLogger(Person.class);
 
   private Long id;
   private int age;
@@ -25,64 +30,79 @@ public class Person {
    * 
    */
   public Person() {
+    log.debug("");
   }
 
   public Long getId() {
+    log.debug("");
     return id;
   }
 
   @SuppressWarnings("unused")
   private void setId(Long id) {
+    log.debug("");
     this.id = id;
   }
 
   public int getAge() {
+    log.debug("");
     return age;
   }
 
   public void setAge(int age) {
+    log.debug("");
     this.age = age;
   }
 
   public String getFirstname() {
+    log.debug("");
     return firstname;
   }
 
   public void setFirstname(String firstname) {
+    log.debug("");
     this.firstname = firstname;
   }
 
   public String getLastname() {
+    log.debug("");
     return lastname;
   }
 
   public void setLastname(String lastname) {
+    log.debug("");
     this.lastname = lastname;
   }
 
   public Set<Event> getEvents() {
+    log.debug("");
     return this.events;
   }
 
   public void setEvents(Set<Event> events) {
+    log.debug("");
     this.events = events;
   }
 
   public void addToEvent(Event event) {
+    log.debug("");
     this.getEvents().add(event);
     event.getParticipants().add(this);
   }
 
   public void removeFromEvent(Event event) {
+    log.debug("");
     this.getEvents().remove(event);
     event.getParticipants().remove(this);
   }
 
   public Set<String> getEmailAddresses() {
+    log.debug("");
     return emailAddresses;
   }
 
   public void setEmailAddresses(Set<String> emailAddresses) {
+    log.debug("");
     this.emailAddresses = emailAddresses;
   }
 }
