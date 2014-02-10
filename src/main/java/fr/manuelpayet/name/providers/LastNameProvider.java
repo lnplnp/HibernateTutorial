@@ -14,11 +14,6 @@ public class LastNameProvider extends NameProvider {
 
   private static Logger log = LoggerFactory.getLogger(NameProvider.class);
 
-  public LastNameProvider() {
-    log.debug("");
-    namesProvider = "src/main/resources/noms.txt";
-  }
-
   /**
    * @param args
    */
@@ -28,6 +23,11 @@ public class LastNameProvider extends NameProvider {
     System.out.println(nameProvider.getName());
     System.out.println(nameProvider.getName());
     System.out.println(nameProvider.getName());
+  }
+
+  public LastNameProvider() {
+    log.debug("");
+    namesProvider = "src/main/resources/noms.txt";
   }
 
 }

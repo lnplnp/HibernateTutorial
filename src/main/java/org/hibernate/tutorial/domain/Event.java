@@ -21,9 +21,29 @@ public class Event {
     log.debug("");
   }
 
+  public Date getDate() {
+    log.debug("");
+    return date;
+  }
+
   public Long getId() {
     log.debug("");
     return id;
+  }
+
+  public Set<Person> getParticipants() {
+    log.debug("");
+    return participants;
+  }
+
+  public String getTitle() {
+    log.debug("");
+    return title;
+  }
+
+  public void setDate(Date date) {
+    log.debug("");
+    this.date = date;
   }
 
   @SuppressWarnings("unused")
@@ -32,33 +52,13 @@ public class Event {
     this.id = id;
   }
 
-  public Date getDate() {
+  public void setParticipants(Set<Person> participants) {
     log.debug("");
-    return date;
-  }
-
-  public void setDate(Date date) {
-    log.debug("");
-    this.date = date;
-  }
-
-  public String getTitle() {
-    log.debug("");
-    return title;
+    this.participants = participants;
   }
 
   public void setTitle(String title) {
     log.debug("");
     this.title = title;
-  }
-
-  public Set<Person> getParticipants() {
-    log.debug("");
-    return participants;
-  }
-
-  public void setParticipants(Set<Person> participants) {
-    log.debug("");
-    this.participants = participants;
   }
 }

@@ -33,15 +33,10 @@ public class Person {
     log.debug("");
   }
 
-  public Long getId() {
+  public void addToEvent(Event event) {
     log.debug("");
-    return id;
-  }
-
-  @SuppressWarnings("unused")
-  private void setId(Long id) {
-    log.debug("");
-    this.id = id;
+    this.getEvents().add(event);
+    event.getParticipants().add(this);
   }
 
   public int getAge() {
@@ -49,29 +44,9 @@ public class Person {
     return age;
   }
 
-  public void setAge(int age) {
+  public Set<String> getEmailAddresses() {
     log.debug("");
-    this.age = age;
-  }
-
-  public String getFirstname() {
-    log.debug("");
-    return firstname;
-  }
-
-  public void setFirstname(String firstname) {
-    log.debug("");
-    this.firstname = firstname;
-  }
-
-  public String getLastname() {
-    log.debug("");
-    return lastname;
-  }
-
-  public void setLastname(String lastname) {
-    log.debug("");
-    this.lastname = lastname;
+    return emailAddresses;
   }
 
   public Set<Event> getEvents() {
@@ -79,15 +54,19 @@ public class Person {
     return this.events;
   }
 
-  public void setEvents(Set<Event> events) {
+  public String getFirstname() {
     log.debug("");
-    this.events = events;
+    return firstname;
   }
 
-  public void addToEvent(Event event) {
+  public Long getId() {
     log.debug("");
-    this.getEvents().add(event);
-    event.getParticipants().add(this);
+    return id;
+  }
+
+  public String getLastname() {
+    log.debug("");
+    return lastname;
   }
 
   public void removeFromEvent(Event event) {
@@ -96,13 +75,34 @@ public class Person {
     event.getParticipants().remove(this);
   }
 
-  public Set<String> getEmailAddresses() {
+  public void setAge(int age) {
     log.debug("");
-    return emailAddresses;
+    this.age = age;
   }
 
   public void setEmailAddresses(Set<String> emailAddresses) {
     log.debug("");
     this.emailAddresses = emailAddresses;
+  }
+
+  public void setEvents(Set<Event> events) {
+    log.debug("");
+    this.events = events;
+  }
+
+  public void setFirstname(String firstname) {
+    log.debug("");
+    this.firstname = firstname;
+  }
+
+  @SuppressWarnings("unused")
+  private void setId(Long id) {
+    log.debug("");
+    this.id = id;
+  }
+
+  public void setLastname(String lastname) {
+    log.debug("");
+    this.lastname = lastname;
   }
 }

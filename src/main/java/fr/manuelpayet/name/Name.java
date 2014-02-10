@@ -13,13 +13,13 @@ public abstract class Name {
 
   public abstract Long getId();
 
+  public abstract String getLabel();
+
   @SuppressWarnings("unused")
   private void setId(Long id) {
     log.debug("private void setId(Long {})", id);
     this.id = id;
   }
-
-  public abstract String getLabel();
 
   public abstract void setLabel(String label);
 
