@@ -33,7 +33,10 @@ public abstract class NameProvider {
       String name;
       // Read File Line By Line
       while ((name = br.readLine()) != null) {
-        names.add(name.trim());
+        String nameTrimmed = name.trim();
+        if (null != nameTrimmed && !nameTrimmed.equals("")) {
+          names.add(nameTrimmed);
+        }
       }
       // Close the input stream
       in.close();

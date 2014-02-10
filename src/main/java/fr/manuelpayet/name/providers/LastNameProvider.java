@@ -30,4 +30,8 @@ public class LastNameProvider extends NameProvider {
     namesProvider = "src/main/resources/noms.txt";
   }
 
+  @Override
+  public String getName() {
+    return super.getName().toUpperCase();
+  }
 }
